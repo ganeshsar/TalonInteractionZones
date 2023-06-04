@@ -43,7 +43,8 @@ For your reference these are the rules for when you're creating a custom interac
 3. All markings for zones must be pixel perfect. 
 	1. This means that every pixel must be 100% the intended colour. Many image editing operations (rescaling, rotating, paint brushes etc.) will apply a little bit of blurring to the edges of your marks. This is currently not allowed.
 	2. Use the pencil tool instead of brushes, disable feathering on selections, and turn the hardness and opacity to 100%. 
-	3. A good method to check is to zoom in as far as you can onto the edges of your shapes and see if there's any blurring. You want no smooth transitions between colors.
+	3. A good method to check is to zoom in as far as you can onto the edges of your shapes and see if there's any blurring. You want no smooth transitions between colors.<br /><br />
+Note: you must replace and regenerate the default.pdf to swap to custom zones.
 
 ### Configuration File Format
 Title of the interaction zone<br />
