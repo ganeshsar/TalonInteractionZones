@@ -23,9 +23,12 @@ class Master:
         self.configs = dict()
         self.activeID=TRANSPARENT
         
-        w=60
-        h=30
-        self.toggleRect=(Rect(self.screen.width/2 - w/2,10,w,h))
+        w=60 if not ZONE_TOGGLE_OVERRIDE_SIZE else ZONE_TOGGLE_OVERRIDE_WIDTH
+        h=30 if not ZONE_TOGGLE_OVERRIDE_SIZE else ZONE_TOGGLE_OVERRIDE_HEIGHT
+        if ZONE_TOGGLE_OVERRIDE_POSITION:
+            self.toggleRect=(Rect(ZONE_TOGGLE_OVERRIDE_X,ZONE_TOGGLE_OVERRIDE_Y,w,h))
+        else:
+            self.toggleRect=(Rect(self.screen.width/2 - w/2,10,w,h))
         
         self.lastWindowTitle = ""
         self.activeFile = ""
@@ -242,8 +245,9 @@ def primative_interaction(action:str):
         elif action[:7]=="unbind:":
             actions.user.keybinder_remove_key_bind(action[8:].replace('\n',''))
         elif action[:5]=="swap:":
-            print("acting on %s"%str(id(master)))
             master.set_zone_override(action[6:].replace('\n',''))
+        elif action[:6]=="start:":
+            os.startfile(action[7:].replace('\n',''))
         else:
             actions.key(action)
     except ValueError:

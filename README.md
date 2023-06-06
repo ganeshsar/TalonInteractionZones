@@ -36,7 +36,7 @@ You must define zones by using unique colours and then place configuration text 
 ![example of good zone configuration](http://ganeshsaraswat.ca/InternetImages/zconfiguration.jpg)
 
 ## Creating the Zones PDF
-For your reference these are the rules for when you're creating a custom interaction zone. Look at the example above for an intuitive understanding of how this works.
+For your reference these are the rules for when you're creating a custom interaction zone. Look at the example above for an intuitive understanding of how this works. Also, included in .../pdfparser/ is the .psd file which was used to export the default PDF for your use as a reference. 
 1. Every interaction zone must have a unique colour (as long as the colour is a little bit different, its fine).
 2. All text (the configuration text) must be inside the appropriate unique colour.
 3. The background of the exported PDF must be pure white.
@@ -52,7 +52,7 @@ on [click/hover] [trigger/NONE] [warmup/NONE] [repeat delay/NONE]<br />
 action1<br />
 action2<br />
 <br />
-Anywhere that NONE appears means that that field is optional.<br />
+Anywhere that NONE appears means that that field is optional. action2 only applies if the interaction zone is a trigger.<br />
 Warmup: for hovering, this is how long you need to hover over the zone to start the command. For click, this is the delay before the command starts.<br />
 Repeat Delay: with how much frequency will the command repeat in the case of a trigger zone.
 
@@ -63,6 +63,7 @@ Repeat Delay: with how much frequency will the command repeat in the case of a t
 	* bind: a,b
 	* unbind: a
 * Text Insertion: simply write the text that you want to insert
+* Start Programs: start: PATH_OF_THING_TO_OPEN
 
 ### Configuration Examples
 A<br />
@@ -85,3 +86,8 @@ shift:up<br />
 
 ### Note:
 * (Advanced users) all generated files are placed in ...user/GanzInteractionZones/ feel free to manually export pngs directly to this folder as well as manually adjust the generated configuration files.
+* See settings.py to further customize the way that interaction zones work (zone opacity, toggle switch location, etc.)
+
+# Acknowledgements:
+* End-user Experience Design, Brinzerdecalli: inspired by the needs and ideas of Brinzerdecalli.
+* Base Project, FireChickenProductivity: this project is a rewrite of an interaction zones project started here (https://github.com/FireChickenProductivity).

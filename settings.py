@@ -9,6 +9,15 @@ DEFAULT_FILE_NAME = "default"
 ZONES_ALPHA = 100
 # Adjust the transparency of the zones text [0, 255], where 255 is full opaque and 0 is invisible.
 ZONES_TEXT_ALPHA = 255
+
+# Customize the position in screen pixels of the zone toggle switch (0,0 is the top left of the screen)
+ZONE_TOGGLE_OVERRIDE_POSITION = False
+ZONE_TOGGLE_OVERRIDE_X = 500
+ZONE_TOGGLE_OVERRIDE_Y = 500
+# Customize the sizing in screen pixels of the zone toggle switch (0,0 is the top left of the screen)
+ZONE_TOGGLE_OVERRIDE_SIZE = False
+ZONE_TOGGLE_OVERRIDE_WIDTH = 60
+ZONE_TOGGLE_OVERRIDE_HEIGHT = 30
 # Adjust the transparency of the zones toggle switch (top centre of the screen) [0, 255], where 255 is full opaque and 0 is invisible.
 ZONE_TOGGLE_SWITCH_ALPHA = 128
 
