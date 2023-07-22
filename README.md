@@ -16,17 +16,20 @@ Unofficial interaction zones project for Talon Voice. Use your cursor to activat
 * Any key action supported by Talon (https://talon.wiki/key_action/) [ex: ctrl-s]
 * Key bindings, requires (https://github.com/FireChickenProductivity/TalonKeyRebindings) [ex: bind: a,mouse 0, unbind: a]
 * Swapping interaction zones [ex: swap: default]
+* Starting/opening any application [ex: start: C:/notepad.exe]
 
 ## Workflow Overview
-1. Draw your zones in your image editing program and use text boxes inside of the zones to configure them. Requires any image editing program that exports to PDF (https://www.photopea.com/ or Photoshop are examples). Every unique zone must have a unique colour (even a little difference is fine), all text for a particular zone must be within that unique colour.
+1. Draw your zones in your image editing program and use text boxes inside of the zones to configure them (alternatively just put down some placeholder text and manually write the configuration file after). Requires any image editing program that exports to PDF (https://www.photopea.com/ or Photoshop are examples). Every unique zone must have a unique colour (even a little difference is fine), all text for a particular zone must be within that unique colour.
 2. Download pdf files to …/pdfparser/ subdirectory. Use the pdf_parser.py utility to automatically convert the PDF into a visual (.png stripped of text), and config file (.txt).
 3. Use the interaction zones.
 
 ## Installation
 1. Clone this repository into the Talon user folder.
-3. First time users need to create an interaction zone. A default.pdf interaction zone is included in .../pdfparser/. You need to run the pdf_parser.py file in the .../pdfparser directory as a standalone script and select the "Parse Pdf" option in order to generate the interaction zone files. This requires the PyMuPDF (https://pypi.org/project/PyMuPDF/) library to be installed.
-4. If required, you can use the same utility to resize the output of the PDFs to your local machines screen size using the "Resize All Images" option when running the utility.
-5. Restart Talon and click the little grey rectangle in the top centre of your screen to toggle the zones on-and-off.
+2. First time users need to create an interaction zone. 
+<br>A default.pdf interaction zone is included in .../pdfparser/. You need to run the pdf_parser.py file in the .../pdfparser directory as a standalone script and select the "Parse Pdf" option in order to generate the interaction zone files. 
+<br>This requires the PyMuPDF (https://pypi.org/project/PyMuPDF/) library to be installed, also Pillow (https://pypi.org/project/Pillow/).
+3. If required, you can use the same utility to resize the output of the PDFs to your local machines screen size using the "Resize All Images" option when running the utility.
+4. Restart Talon and click the little grey rectangle in the top centre of your screen to toggle the zones on-and-off.
 
 # Creating Custom Interaction Zones
 Creating a custom interaction zone occurs inside of an image editing program such as Photopea (https://www.photopea.com/) or Photoshop.<br /><br />
@@ -38,7 +41,8 @@ You must define zones by using unique colours and then place configuration text 
 ## Creating the Zones PDF
 For your reference these are the rules for when you're creating a custom interaction zone. Look at the example above for an intuitive understanding of how this works. Also, included in .../pdfparser/ is the .psd file which was used to export the default PDF for your use as a reference. 
 1. Every interaction zone must have a unique colour (as long as the colour is a little bit different, its fine).
-2. All text (the configuration text) must be inside the appropriate unique colour.
+2. All text (the configuration text) must be inside the appropriate unique colour. Alternatively you can just have placeholder text
+then manually write the configuration files.
 3. The background of the exported PDF must be pure white.
 3. All markings for zones must be pixel perfect. 
 	1. This means that every pixel must be 100% the intended colour. Many image editing operations (rescaling, rotating, paint brushes etc.) will apply a little bit of blurring to the edges of your marks. This is currently not allowed.
@@ -84,8 +88,14 @@ shift:up<br />
 <br />When you hover over the interaction zone for 1s, it will trigger the key 'shift:down' once. When you hover over the zone again for 1s, it will stop the 'shift' by firing 'shift:up'.
 
 
+### Modifiers
+For very specific customization, zones also support modifiers. Add modifiers in a single newline. For multiple modifiers separate them by commas.<br>
+Below modifiers are listed before the colon (must be exact).<br><br>
+deactivate on exit: only works on hover trigger zones, causes that the zone will be immediately deactivated once you stop hovering.
+
+
 ### Note:
-* (Advanced users) all generated files are placed in ...user/GanzInteractionZones/ feel free to manually export pngs directly to this folder as well as manually adjust the generated configuration files.
+* (Advanced users) all generated files are placed in ...user/GanzInteractionZones/ feel free to manually export pngs directly to this folder as well as manually adjust the generated configuration files. Be warned that using pdf_parser.py will overwrite any manually adjusted configuration data.
 * See settings.py to further customize the way that interaction zones work (zone opacity, toggle switch location, etc.)
 
 # Acknowledgements:

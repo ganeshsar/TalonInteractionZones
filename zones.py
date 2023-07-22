@@ -18,6 +18,7 @@ class Zone:
         # at present the below modifier has no effect, for now all zones block input, makes it easier to use zoom mouse
         # 'allow input' might be a better modifier
         self.modifierBlockInput = "block input" in modifiers
+        self.modifierTriggerOffOnExit = "deactivate on exit" in modifiers
         
         self.wasHovering = False
         self.startTimer = 0
@@ -48,6 +49,10 @@ class Zone:
     def on_hover_change(self,isHovering:bool):
         if self.triggerType != TriggerType.HOVER:
             return
+        
+        if self.modifierTriggerOffOnExit and not isHovering:
+            self.deactivate()
+            
         pass
     
     def click(self):
