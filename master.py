@@ -57,6 +57,7 @@ class Master:
             self.img = Image.from_file("%s.png" % (s))
             with open("%s.txt" % (s),"r") as f:
                 lines = f.readlines()
+                lines.append(" ")
                 ss = ""
                 for s in lines:
                     if is_line_newzone(s):
@@ -245,9 +246,15 @@ def primative_interaction(action:str):
         elif action[:7]=="unbind:":
             actions.user.keybinder_remove_key_bind(action[8:].replace('\n',''))
         elif action[:5]=="swap:":
+            if (master==None):
+                print("Null master, please restart talon or report a bug if this persists.")
             master.set_zone_override(action[6:].replace('\n',''))
         elif action[:6]=="start:":
             os.startfile(action[7:].replace('\n',''))
+        elif action[:12]=="scro1ll down:":
+           actions.user.mouse_scroll_down(float(action[13:].replace('\n','')))     
+        elif action[:10]=="scroll up:":
+           actions.user.mouse_scroll_up(float(action[11:].replace('\n','')))
         else:
             actions.key(action)
     except ValueError:

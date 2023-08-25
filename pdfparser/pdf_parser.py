@@ -131,6 +131,7 @@ if __name__ == "__main__":
         img = img.convert("RGBA")
         pixdata = img.load()
         width, height = img.size
+        print(img.size)
         for y in range(height):
             for x in range(width):
                 if pixdata[x, y] == (255, 255, 255, 255) or pixdata[x, y] == (0, 0, 0, 255):
