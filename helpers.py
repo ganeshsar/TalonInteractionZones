@@ -14,7 +14,7 @@ class TriggerType(Enum):
 
 # Functions
 def verify_home_dir()->str:
-    HOME_DIRECTORY = os.path.join(actions.path.talon_user(), 'GanzInteractionZones')
+    HOME_DIRECTORY = os.path.join(actions.path.talon_user(), 'TalonInteractionZones')
     if not os.path.exists(HOME_DIRECTORY):
         os.makedirs(HOME_DIRECTORY)
     return HOME_DIRECTORY
