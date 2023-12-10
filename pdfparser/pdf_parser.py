@@ -2,7 +2,7 @@
 # Must run a standalone script
 if __name__ == "__main__":
     
-    CORRECT_FOLDER_NAME = "GanzInteractionZones"
+    CORRECT_FOLDER_NAME = "TalonInteractionZones"
     
     import fitz  # PyMuPDF
     from PIL import Image
