@@ -2,10 +2,10 @@
 # Must run a standalone script
 if __name__ == "__main__":
     
-    CORRECT_FOLDER_NAME = "GanzInteractionZones"
+    CORRECT_FOLDER_NAME = "InteractionZones"
     
-    import fitz  # PyMuPDF
-    from PIL import Image
+    import fitz  # PyMuPDF, https://pypi.org/project/PyMuPDF/
+    from PIL import Image #Pillow, https://pypi.org/project/Pillow/
     import io
     import os
 
@@ -139,37 +139,42 @@ if __name__ == "__main__":
             
         img.save(output_png)
 
-    currentDirectory =go_back_directory(__file__)
-    print("Working directory %s"%currentDirectory)
 
-    while True:
-        v = input("1) Parse Pdf\n2) Resize All Images\n")
-    
-        correctDir = "%s%s%s%s"%(go_back_directory(go_back_directory(currentDirectory)),os.sep, CORRECT_FOLDER_NAME,os.sep)
+    # main
+    def main():
+        currentDirectory =go_back_directory(__file__)
+        print("Working directory %s"%currentDirectory)
+        correctDir = "%s%s%s%s"%((go_back_directory(currentDirectory)),os.sep, CORRECT_FOLDER_NAME,os.sep)
+        print("Planning to output to %s"%correctDir)
         if not os.path.exists(correctDir):
             print("%s: path not found, move parser into a correct subdirectory..."%correctDir)
-            continue
-        
-        if v=='1':
-            v = input("Enter the name of the file without extensions (or nothing for default): ")
-            if v.isspace() or v=="":
-                v="default"
-            path="%s%s%s.pdf"%(currentDirectory,os.sep,v)
-            if not os.path.exists(path):
-                print("%s: file not found."%path)
-                continue
-            targetpng = "%s%s.png"%(correctDir,v)
-            targettxt = "%s%s.txt"%(correctDir,v)
-            parse_pdf(path,targetpng, targettxt)
-            print("\nSuccess, wrote to %s\n"%targetpng[:len(targetpng)-4])
-        if v=='2':
-            v = input("Enter resize target (width x height): ")
-            v = v.replace(' ','').split('x')
-            width=int(v[0])
-            height=int(v[1])
-            files = os.listdir(correctDir)
-            for f in files:
-                if f.endswith(".png"):
-                    p = os.path.join(correctDir, f)
-                    rescale_image(p,width,height,p)
-                    print("\nRescaled %s\n"%p)
+            return
+
+        while True:
+            v = input("1) Parse Pdf\n2) Resize All Images\n")
+            
+            if v=='1':
+                v = input("Enter the name of the file without extensions (or nothing for default): ")
+                if v.isspace() or v=="":
+                    v="default"
+                path="%s%s%s.pdf"%(currentDirectory,os.sep,v)
+                if not os.path.exists(path):
+                    print("%s: file not found."%path)
+                    continue
+                targetpng = "%s%s.png"%(correctDir,v)
+                targettxt = "%s%s.txt"%(correctDir,v)
+                parse_pdf(path,targetpng, targettxt)
+                print("\nSuccess, wrote to %s\n"%targetpng[:len(targetpng)-4])
+            if v=='2':
+                v = input("Enter resize target (width x height): ")
+                v = v.replace(' ','').split('x')
+                width=int(v[0])
+                height=int(v[1])
+                files = os.listdir(correctDir)
+                for f in files:
+                    if f.endswith(".png"):
+                        p = os.path.join(correctDir, f)
+                        rescale_image(p,width,height,p)
+                        print("\nRescaled %s\n"%p)
+
+    main()

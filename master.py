@@ -251,10 +251,12 @@ def primative_interaction(action:str):
             master.set_zone_override(action[6:].replace('\n',''))
         elif action[:6]=="start:":
             os.startfile(action[7:].replace('\n',''))
-        elif action[:12]=="scro1ll down:":
+        elif action[:12]=="scroll down:":
            actions.user.mouse_scroll_down(float(action[13:].replace('\n','')))     
         elif action[:10]=="scroll up:":
            actions.user.mouse_scroll_up(float(action[11:].replace('\n','')))
+        elif action[:6]=="mimic:": # Not recommended for usage generally (can cause unexpected behaviour)
+            actions.user.engine_mimic(action[7:].replace('\n',''))
         else:
             actions.key(action)
     except ValueError:

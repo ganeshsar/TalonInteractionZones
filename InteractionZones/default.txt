@@ -1,0 +1,57 @@
+#7aacddff|(78.50800323486328, 870.0807495117188)
+SHIFT
+on click trigger
+shift:down
+shift:up
+
+#7bacddff|(77.50960540771484, 981.0723266601562)
+CTRL
+on click trigger
+ctrl:down
+ctrl:up
+
+#7dacddff|(241.49679565429688, 757.080322265625)
+S-TAB
+on click
+shift-tab
+
+#82acddff|(1711.50634765625, 881.0751342773438)
+BACKSPACE
+on click
+backspace
+
+#81acddff|(1722.508056640625, 998.0823364257812)
+ENTER
+on click
+enter
+
+#83acddff|(1510.5015869140625, 859.0755615234375)
+UNDO
+on click
+ctrl-z
+
+#84acddff|(1510.5015869140625, 980.0787353515625)
+REDO
+on click
+ctrl-y
+
+#7cacddff|(78.50800323486328, 757.080322265625)
+TAB
+on click
+tab
+
+#80acddff|(510.50799560546875, 979.0743408203125)
+SAVE
+on click
+ctrl-s
+
+#7eacddff|(373.496826171875, 982.0767211914062)
+COPY
+on click
+ctrl-c
+
+#7facddff|(373.496826171875, 857.0775146484375)
+PASTE
+on click
+ctrl-v
+
