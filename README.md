@@ -2,7 +2,7 @@
 
 ## Overview
 Unofficial interaction zones project for Talon Voice. Use your cursor to activate commands by hovering or clicking on zones. Design zones via an image creation program and use them in Talon. Report any bugs or enhancements.
-![image showing interaction zones](http://ganeshsaraswat.ca/InternetImages/zones.gif)
+![image showing interaction zones](https://ganthefan.com/images/zones.gif)
 
 ## Features
 * 2 types of zones: simple (similar to a button switch), trigger (similar to a lever switch).
@@ -25,7 +25,7 @@ Unofficial interaction zones project for Talon Voice. Use your cursor to activat
 3. Use the interaction zones.
 * Set your document size in your image-editing program to be your screen size with 72DP (dpi is usually by default correct).
 ### Photoshop PDF Settings
-![image showing interaction zones](http://ganeshsaraswat.ca/InternetImages/pss.png)
+![image showing interaction zones](https://ganthefan.com/images/pss.png)
 * The exported PDF must not have any compression settings enabled.
 
 ## Installation
@@ -41,7 +41,7 @@ Creating a custom interaction zone occurs inside of an image editing program suc
 You must define zones by using unique colours and then place configuration text inside of those zones.
 
 ### Example of Good Zone PDF
-![example of good zone configuration](http://ganeshsaraswat.ca/InternetImages/zconfiguration.jpg)
+![example of good zone configuration](https://ganthefan.com/images/zconfiguration.jpg)
 
 ## Creating the Zones PDF
 For your reference these are the rules for when you're creating a custom interaction zone. Look at the example above for an intuitive understanding of how this works. Also, included in .../pdfparser/ is the .psd file which was used to export the default PDF for your use as a reference. 
