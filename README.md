@@ -100,9 +100,9 @@ Below modifiers are listed before the colon (must be exact).<br><br>
 
 
 ### Notes:
-* (Advanced users) all generated files are placed in ...user/GanzInteractionZones/ feel free to manually export pngs directly to this folder as well as manually adjust the generated configuration files. Be warned that using pdf_parser.py will overwrite any manually adjusted configuration data.
+* (Advanced users) all generated files are placed in /InteractionZones/ feel free to manually export pngs directly to this folder as well as manually adjust the generated configuration files. Be warned that using pdf_parser.py will overwrite any manually adjusted configuration data.
 * See settings.py to further customize the way that interaction zones work (zone opacity, toggle switch location, etc.)
-* Using really really small fonts with a small screen size will usually cause the pdfparser to fail to automatically convert your pdf. In this case you should manually export your .png and .txt config files to the GanzInteractionZones folder.
+* Using really really small fonts with a small screen size will usually cause the pdfparser to fail to automatically convert your pdf. In this case you should manually export your .png and .txt config files to the InteractionZones folder.
 
 # Acknowledgements:
 * End-user Experience Design, Brinzerdecalli: inspired by the needs and ideas of Brinzerdecalli.
